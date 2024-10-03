@@ -186,9 +186,105 @@ function cuentaAtras(n){
 	return cuentaAtras(n+1)
 }
 cuentaAtras(12)
-*/
-                         // alt91[]  alt60<  alt62>
-             //javascript
+
+
+//clousures
+//objetos: estrucutra de datos
+	let persona = {
+		nombre: "messi",
+		edad: 37,
+		esCasado:false,
+		equipos: ["barcelona","psg", "miami"],
+		trofeos: {
+			copas: "cahmpions",
+			liga:"liga españa",
+			seleccion: "mundial",
+		}
+	}
+	//accedemos a las propiedades
+	console.log(persona);
+	console.log(persona.edad);
+	console.log(persona["equipos"]);
+	console.log(persona.trofeos.copas)
+	//agregamos propiedades
+	persona.esCasado = true;
+	persona["crack"] = true; //agregar nueva propiedad
+	persona.edad = 40;
+
+//metodos: funciones que trabajan dentro del objeto. 'this' se utiliza para referirse al objeto
+let persona2 = {
+	nombre: "messi",
+	edad: 37,
+	esCasado:false,
+	equipos: ["barcelona","psg", "miami"],
+	trofeos: {
+		copas: "cahmpions",
+		liga:"liga españa",
+		seleccion: "mundial",
+	},
+	saludar: function (){
+		console.log("hola mi nombre es ${this.nombre} y tengo ${this.edad} años")
+	}
+}
+//object.entries: nos devuelve un arreglo de array con valor de propiedad y su valor. object.value nos devulve solo el valor. object.keys: solo las propiedades
+
+	//object.value
+	const value = object.value(persona2)
+	console.log(value);
+	//object.keys
+	const keys = object.keys(persona2)
+	console.log(keys);
+	//object.entries
+	const entries = object.entries(persona2)
+	console.log(entries);
+
+//spread operator ...
+const nums = [1, 2, 3]
+const copyNums = [...nums]
+
+copyNums.push(4)
+console.log([...copyNums, "otra cosa", ...nums])
+console.log (nums);
+
+const moto ={
+	color: "azul"
+	motor: "110"
+}
+const auto={
+	color: "rojo"
+	motor: "1.6"
+	escape: true
+}
+console.log({...moto, ...auto, escape: false})
+
+	//rest operator: 
+	const resteOperator = (a, b, ...rest) =>{
+		console.log("a=>", a)
+		console.log("b=>", b)
+		console.log("resto=>", rest)
+	},
+	 
+	//destructuring
+	const obj = {
+		name: "de paul",
+		age: "35",
+		country: "argentina",
+
+	}
+	const {name, age, country} = obj
+
+	//destrucutring array
+
+	const array = [1, 2, 3, 4, 5, 6]
+	const [num1, num2, num3, ...resto] = array
+	console.log(num1);
+	console.log(num2);
+	console.log(num3);
+	console.log(resto);
+	*/
+                         // alt91[]  alt60<  alt62> alt96`
+								//ctrl-ctrl-} ``
+	/*					 //javascript Dalto
 -lenguaje de programacion
 -interpretado (el codigo no debe de ser pasado por un compilador)
 -orientado a objetos 
@@ -209,8 +305,10 @@ var
 let
 const: se debe declarar e inicializar al mismo tiempo
 
-tipos de daos: String, number, Boolean
-casos especiales: undefined, Null, NaN
+tipos de datos: String, number, Boolean         //primitivos             
+casos especiales: 	undefined:temporalmente sin valor 
+					Null: variable declarada con valor vacio
+ 					NaN: no es un numero, pero si es tipo numero //primitivos: vienen con el lenguaje, son originales
  string: "cadena de texto" ''
  number: numero 19 1000
  boolean: 0 1 true false
@@ -222,3 +320,279 @@ casos especiales: undefined, Null, NaN
 
 				    INCIALIZACION       reasignacion 
  declaracion: let nombre = ruben;   nombre = alejandro
+
+ //ejercicio con prompt:
+
+ let nombre = prompt ("cual es tu nombre?")
+ alert("un gusto"+ " " + nombre) 
+ 
+ //OPERADORES 
+ 
+ operadores de asignacion: asigna un valor operando de la izquierda basado en el valor der la derecha
+ x= asigancion
+ x+ adiccion
+ x- sustraccion
+ x* multiplicacion
+ x/ division
+ x% resto
+ x** exponenciacion 
+ 
+ operadores aritmeticos: toman valores numericos como sus operando y retornan un valor numerico unico
+ ++ incremento
+ -- decremento
+
+ //concatenacion: union de cadena de textos. (string)
+ 
+ ejemplo: string forzado
+ 
+ numero1 = 12;
+ numero2 = 10;
+ resultado = "" + numero1 + numero2; (1210)
+ 
+ concat: se necesita obligatoriamente un numero
+ ejemplo:
+
+ numero1 = "53";
+ numero2 = 8;
+ resultado = numero1.concat(numero2); (538)
+
+ `backtiks` y ${}
+
+nombre = "lucas"
+
+frase = `soy ${nombre} y estoy caminando`; (soy lucas y estoy caminando)
+
+//OPERADORES DE COMPARACION Y LOGICOS 
+comparacion:
+== 	igualdad
+!= 	desigualdad
+=== identidad / igualdad estricta dato y valor
+!== desigualdad estricta
+< 	menor que
+> 	mayor que
+<= 	menor igual que
+>= 	mayor igual que
+
+
+logicos: nos devuelven un resultado a partir de que se cumpla (o no) una condicion, su resultado es booleano, y sus operandos son valores logicos o asimilables a ellos.
+
+&& and  se necesita una falsa para ser false
+||	or	se necesita una verdadera para ser true
+!   not  niega el valor inviertiendo el resultado
+
+	
+camelCase: modo de escritura donde la primera palabra va con minuscula y la segunda empieza con mayuscula (asi se trabaja con variables)	
+
+//CONDICIONALES: sentencias que nos permiten comprobar si una condicion se cumple
+
+if (10<15){
+	alert("hola")
+}
+
+nombre= "Ruben";
+apellido= "Carrizo";
+if(nombre == "Ruben" && apellido == "Carrizo"){
+	alert("mi nombre es " + nombre + ` ` + apellido)
+}
+else if (nombre == "Dalto"){
+	alert("bienvenido")
+}
+else{
+	alert ("nunca habia escuchado ese nombre");
+}
+	
+dineroCofla = prompt ("cuanto dinero tienes Cofla");
+dineroRoberto = prompt ("cuanto dinero tienes Roberto");
+dineroPedro = prompt ("cuanto dinero tienes Pedro");1
+
+dineroCofla= parseInt(dineroCofla)
+if (dineroCofla >= 0.6 && dineroCofla <1){
+	alert("cofla compra el de agua")
+	alert ("vuelto" + (dineroCofla - 0.6)) 
+}
+else if (dineroCofla >=1 && dineroCofla < 1.6){
+	alert ("cofla compra el de crema")
+	alert ("vuelto" + (dineroCofla - 1))
+}
+else if (dineroCofla >=1.6 && dineroCofla < 1.7){
+	alert ("cofla compra el heladix")
+	alert ("vuelto" + (dineroCofla - 1.6))
+}
+else if (dineroCofla >=1.7 && dineroCofla <1.8){
+	alert ("cofla comprate el heladovich")
+	alert ("vuelto" + (dineroCofla - 1.7))
+}
+else if (dineroCofla >=1.8 && dineroCofla < 2.9){
+	alert ("cofla compra el de helardo")
+	alert ("vuelto" + (dineroCofla - 1.8))
+}
+else if (dineroCofla >=2.9){
+	alert ("cofla helado con cofites o el pote de 1/4kg")
+	alert ("vuelto" + (dineroCofla - 2.9))
+}
+else{
+	alert("cofla anda a buscar plata gil")
+}
+
+if (dineroRoberto >= 0.6 && dineroRoberto <1){
+	alert("roberto compra el de agua")
+}
+else if (dineroRoberto >=1 && dineroRoberto < 1.6){
+	alert ("roberto compra el de crema")
+}
+else if (dineroRoberto >=1.6 && dineroRoberto < 1.7){
+	alert ("roberto compra el heladix")
+}
+else if (dineroRoberto >=1.7 && dineroRoberto <1.8){
+	alert ("roberto comprate el heladovich")
+}
+else if (dineroRoberto >=1.8 && dineroRoberto < 2.9){
+	alert ("roberto compra el de helardo")
+}
+else if (dineroRoberto >=2.9){
+	alert ("roberto helado con cofites o el pote de 1/4kg")
+}
+else{
+	alert("roberto anda a buscar plata gil")
+}
+
+if (dineroPedro >= 0.6 && dineroPedro <1){
+	alert("pedro compra el de agua")
+}
+else if (dineroPedro >=1 && dineroPedro < 1.6){
+	alert ("pedro compra el de crema")
+}
+else if (dineroPredro >=1.6 && dineroPedro < 1.7){
+	alert ("pedro compra el heladix")
+}
+else if (dineroPedro >=1.7 && dineroPedro <1.8){
+	alert ("pedro comprate el heladovich")
+}
+else if (dineroPedro >=1.8 && dineroPedro < 2.9){
+	alert ("pedro compra el de helardo")
+}
+else if (dineroPedro >=2.9){
+	alert ("pedro helado con cofites o el pote de 1/4kg")
+}
+else{
+	alert("pedro anda a buscar plata gil")
+}   
+	
+//ARRAYS: contenedor con datos arreglados, el array es un objeto
+
+frutas = ["pera","manzana","banana"];
+document.write(frutas);
+document.write(frutas[2]); //los valores no definidos tiran undefined
+
+//arrays asociativos: 
+
+pc = {
+	nombre: "daltoPC",
+	procesador: "intel core 17",
+	ram: "16gb",
+	espacio: "1tb",
+}
+document.write(pc["ram"])
+
+//BUCLES E INTERACCION
+
+while: mientras que, funciona con true, es infinito
+
+do: hacer
+
+let numero = 0;
+do {
+	numero++;
+	document.write(numero);
+	
+} 
+while (numero <6);
+
+for: finito, necesita declaracion-inicializacion-iteracion(aumento decremento)
+
+
+for (let i = 0; i<6; i++) {
+	document.write(i)
+}
+
+/*
+//break: cortar y salir del bloque
+let numero = 7;
+while (numero < 15) {
+	numero++;
+	document.write (numero)
+	if (numero == 13) {
+		break
+	}
+}
+
+//continue: saltar y seguir con el bloque
+	
+let numero = 7;
+while (numero < 15) {
+	numero++;
+	if (numero == 13) {
+		continue;
+	}
+	document.write (numero)
+}
+
+//for in: nos devuelve la posicion, nos muestra el indice
+
+let animales = ["gato", "perro", "tiranosaurio rex"];
+for (animal   in animales) {
+	document.write (animal);
+}
+
+//for of: nos muestra el valor
+for (animal   of animales) {
+	document.write (animal);
+}
+//FUNCIONES: porcion de codigo ya declarda que se puede reutilizar
+palabra reservada   nombre de funcion   parametros  funcion 
+													condiciones
+      function         name               (   )      {      }
+
+function saludar(){ //creacion de la funcion
+	respuesta =prompt ("¡hola lucas! ¿como fue tu dia?");
+	if (respuesta == "bien"){
+		alert("me alegro")
+	}else{
+		alert("una pena")
+	}
+}
+saludar ()
+saludar () //llamado a la funcion 
+//return: nos devuelve un valor, haciendo que la funcion nos de un tipo de dato, return tambien finaliza la buncion cortando el bucle 
+
+            //parametros
+function suma(num1,num2){
+	let res = num1+num2;
+	document.write(res);
+}
+    //num1,num2
+suma  (30 , 50)
+
+function suma (num1,num2){
+	let res = num1+num2;
+	return res
+}
+let resultado = suma(20,20)
+document.write(resultado)
+
+function saludar (nombre){
+	let frase = `¡Hola ${nombre}! ¿como estas?`;
+	document.write (frase)
+}
+saludar ("ruben")
+
+//scope: hae que las variable tengan un alcance regional, evitando errores con el uso de "let"
+
+//funciones flecha: se reemplaza la palabra function por =>
+	las funciones flecha se retornan automaticamente 
+*/
+const saludar = (nombre)=>{
+	let frase = `¡hola ${nombre}! ¿como estas?`;
+	document.write (frase)
+}
+saludar ("jose")
