@@ -281,7 +281,28 @@ console.log({...moto, ...auto, escape: false})
 	console.log(num2);
 	console.log(num3);
 	console.log(resto);
-	*/
+	
+	//METODOS DE STRING: javascript toma todo como objetos
+	string: cadena de caracteres que le podemos asignar a una variable, se ponen entre comillas
+
+	//metodos: funciones dentro de un objeto
+	 lenght:saber el largo de una cadena de string
+	 mayusuclas y minusculas: toUpperCse, ToLowerCase
+							var miAuto = "fiAt"
+							console.log(miAuto.toUpperCase()); "FIAT"
+	 reemplzar: replace() permite reemplzar LA PRIMER ocurrencia de un caracter o grupo de caracteres por otros
+	 				cosnt texto = "messi es el mejor";
+					const nuevoTexto = texto.replace("messi","maradona")
+					consoloe.log(nuevoTexto) "maradona es el mejor..."
+	replaceAll(): permite reemplazar todas las ocurrencias de un caracter o grupo de caracteres por otros
+					const texto= "messi es el mejor porque messi.."
+					const nuevoTexto = texto.replaceAll("messi","maradona")
+					console.log(nuevoTexto) "maradona es el mejor porque maradona..."	
+					*/	
+
+
+					
+					
                          // alt91[]  alt60<  alt62> alt96`
 								//ctrl-ctrl-} ``
 	/*					 //javascript Dalto
@@ -590,9 +611,164 @@ saludar ("ruben")
 
 //funciones flecha: se reemplaza la palabra function por =>
 	las funciones flecha se retornan automaticamente 
-*/
+
 const saludar = (nombre)=>{
 	let frase = `¡hola ${nombre}! ¿como estas?`;
 	document.write (frase)
 }
 saludar ("jose")
+
+let free= false;
+const validarCliente = (time)=>{
+	let edad = prompt ("¿cual es tu edad?");
+	if (edad > 18){
+		if (time >= 2 && time < 7 && free ===false){
+			alert (`poder pasar gratis porque sos la primer prsona despues de las 2`);
+			free = true;
+		}else{
+			alert(`son las ${time}:00hs y podes pasar, pero pagas`);
+
+		}
+	}else{
+		alert("sos menor, no pasas")
+	}
+}
+validarCliente(23);
+validarCliente(23.3);
+validarCliente(24);
+validarCliente(2.3);
+
+let cantidad = prompt ("¿cuantos alumnos son?")
+let alunmnosTotales =[];
+for (i = 0; i < cantidad ;i++){
+	alumnosTotales[i] = [prompt("nombre del alumno "+(i+1)),0];
+}
+const tomarAsistencia = (nombre,p)=>
+	let presencia = prompt (nombre);
+	if (presencia == "p" !! presencia == "p"){
+		alumnosTotales [i][1]++;
+	}
+	for (i =0; i<30; i++){
+		for (alumno in alumnosTotales){
+			tomarAsistencia(alumnosTotales[alumno][0],alumno);
+		}
+	}
+	for (alumno in alumnosTotales){
+		let resultado = `${alumnosTotales[alumno][0]<br>
+			______presentes: ${}
+		}
+	}
+		
+
+	const sumar = (num1,num2) =>{
+		return parseInt(num1) + parseInt(num2)
+	}
+	const restar = (num1,num2) =>{
+		return parseInt(num1) - parseInt(num2)
+	}
+	const dividir = (num1,num2) =>{
+		return parseInt(num1) / parseInt(num2)
+	}
+	const multiplicar = (num1,num2) =>{
+		return parseInt(num1) * parseInt(num2)
+	}
+
+	alert ("¿que operacion deseas realizar?");
+	operacion = prompt("1:suma, 2:resta, 3:division, 4:multiplicacion");
+	
+	if (operacion == 1){
+		let numero1 = prompt ("primer numero para sumar");
+		let numero2= prompt("segundo numero para sumar");
+		resultado= sumar(numero1,numero2);
+		alert(`tu resultado es ${resultado}`);
+	}
+	if (operacion == 2){
+		let numero1 = prompt ("primer numero para restar");
+		let numero2= prompt("segundo numero para restar");
+		resultado= restar(numero1,numero2);
+		alert(`tu resultado es ${resultado}`);
+	}
+	if (operacion == 3){
+		let numero1 = prompt ("primer numero para dividir");
+		let numero2= prompt("segundo numero para dividirr");
+		resultado= dividir(numero1,numero2);
+		alert(`tu resultado es ${resultado}`);
+	}
+	if (operacion == 4){
+		let numero1 = prompt ("primer numero para multiplicar");
+		let numero2= prompt("segundo numero para multiplicar");
+		resultado= multiplicar(numero1,numero2);
+		alert(`tu resultado es ${resultado}`);
+	}
+
+	//POO: paradigma de la programacion, que intenta actualizar la forma en la que programamos como si lo hicieramos en la vida real
+	-clase: caja contenedora del objeto
+	-objeto: usar const para trabajar con objetos
+	-atributo: cualidades, caracteristicas del objeto
+	-metodo: cosas que puede hacer nuestro obejto (funcion dentro de una clase)
+	-constructor: particuladridad que tienen las clases, funcion obligatoria que construye las propiedades del objeto
+	-instanciada: cuando se termina todo se puede decir que estamos instanciando un objeto
+	
+
+class animal{
+	constructor(especie, edad, color){
+		this.especie = especie;
+		this.edad = edad;
+		this.color = color;
+		this.info = `soy ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}`;
+	}
+	verInfo(){
+		document.write(this.info)
+	}
+} 
+const gato = new animal ("gato", 7, "marron")
+const loro = new animal ("loro", 4, "verde" )
+const perro = new animal ("perro", 5, "negro")
+document.write (perro.info)
+perro.verInfo();
+
+//caracteristicas de las poo
+
+-abastraccion:intentamos reducir al maximo o resumir el objeto, haciendolo menos complejo
+
+-modularidad: resolver un problema grande, resolviendolo por partes. para resolver por pequeñs porciones 
+
+-encapsulamiento: encapsular los datos para que sean privados y el usario no pueda aceder tan facil
+
+-polimorfismo: capaciodad que tiene un objeto para comportarse distinto del resto solo por sus propiedades
+    //no se puede tener un objeto con el mismo nombre de la clase
+
+
+//otros conceptos poo
+-herencia: extends palabra reservada. es crear una clase que va a tomar todo lo que puede hacer otra clase y agregarle cosas nuevas
+-metodos estaticos
+-metodos accesores (getters, setters)
+
+
+class Animal{
+	constructor(especie, edad, color){
+		this.especie = especie;
+		this.edad = edad;
+		this.color = color;
+		this.info = `soy ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}`;
+	}
+	verInfo(){
+		document.write(this.info)
+	}
+} 
+
+class Perro extends Animal{
+	constructor(especie,edad,color,raza){
+		super(especie,edad,color);
+		this.raza = raza;
+	}
+	ladrar(){
+		alert("waw")
+	}
+}
+
+const gato = new Animal ("gato", 7, "marron")
+const loro = new Animal ("loro", 4, "verde" )
+const perro = new Perro ("perro", 5, "negro", "doberman")
+perro.ladrar();
+*/
